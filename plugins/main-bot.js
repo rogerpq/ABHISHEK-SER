@@ -20,7 +20,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './Repthon1')
+let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './IMG_20230323_132747_924.jpg')
 let user = global.db.data.users[who]
 let { name, exp, diamond, lastclaim, registered, regTime, age, level, role, warn } = global.db.data.users[who]
 let { min, xp, max } = xpRange(user.level, global.multiplier)
@@ -41,7 +41,7 @@ let str = `
 │ *(السورس) اسم البوت* : ${botname}
 │ *اسمك* : ${author}
 │ *اسم المطور* : ℡𓆩𝐁𝐀𝐐𝐈𝐑³¹³࿕𖠚𓆪
-│ *المنصة* : linux(لينكوس)
+│ *المنصة* : حسب الي نصبته😅
 │ *الوقت* : ${uptime}
 │ *التجربة:* ${exp}
 │ *المستوى:* ${role}
@@ -63,7 +63,7 @@ let str = `
 │للحصول على الاوامر📃
 ╰────────────⦁`
     conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
-    m.react('🎯')
+    m.react('🇮🇶')
 
 }
 handler.help = ['main']
